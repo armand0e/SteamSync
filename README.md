@@ -11,7 +11,8 @@
 
 * In the first input box, browse for and select the .exe file of the steam game you would like to sync
 * In the second input box, browse for and select the program you want to launch with your game.
-* *You can also just paste the file path for both files into the provided text box*
+
+*You can also just paste in the file path*
 
 3. Press "Sync"        
 
