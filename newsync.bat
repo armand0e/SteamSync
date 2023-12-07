@@ -1,26 +1,26 @@
 @echo off
 cls
-:: take 2 arguments: game and app
+:: take 2 arguments: game and file
 if "%~2"=="" (
-    echo Usage: .\%~nx0 ^<game^> ^<app^>
+    echo Usage: .\%~nx0 ^<game^> ^<file^>
     exit /b 1
 )
 set "game_fullpath=%~f1"
 set "game_name=%~nx1"
 set "game_dir=%~dp1"
 
-set "app_fullpath=%~f2"
-set "app_name=%~nx2"
-set "app_dir=%~dp2"
+set "file_fullpath=%~f2"
+set "file_name=%~nx2"
+set "file_dir=%~dp2"
 
-echo syncing %game_name% and %app_name% ...
+echo syncing %game_name% and %file_name% ...
 timeout /t 1 /nobreak >nul 2>&1
 
 :: create sync.bat 
 echo @echo off > "%game_dir%sync.bat"
 ;(
     ;(echo(start "" "%game_fullpath%")
-    ;(echo(start "" "%app_fullpath%")
+    ;(echo(start "" "%file_fullpath%")
     ;(echo(timeout /t 30)
     ;(echo(^:check)
     ;(echo(timeout /t 10 /nobreak ^>nul 2^>^&1)
@@ -28,7 +28,7 @@ echo @echo off > "%game_dir%sync.bat"
     ;(echo(if not ^"%%ERRORLEVEL%%^"^=^=^"1^" goto check)
     ;(echo(.)
     ;(echo(timeout /t 10 /nobreak ^>nul 2^>^&1)
-    ;(echo(taskkill /im ^"%app_name%^" /f)
+    ;(echo(taskkill /im ^"%file_name%^" /f)
     ;(echo(.)
     ;(echo(pause)
     
@@ -36,9 +36,13 @@ echo @echo off > "%game_dir%sync.bat"
 
 echo CreateObject("Wscript.Shell").Run "sync.bat", 0, True > "%game_dir%sync.vbs"
 
+echo rm "%game_dir%sync.bat" > uninstall\%game_name%_%file_name%.bat
+echo rm "%game_dir%sync.vbs" >> uninstall\%game_name%_%file_name%.bat
+echo rm "%%~f0" >> uninstall\%game_name%_%file_name%.bat
+
 iexpress /n /q /m "%game_dir%sync.bat"
 echo. 
 echo sync.bat and sync.vbs were successfully created in %game_dir%
-echo You can now run sync.vbs to sync %game_name% and %app_name%
+echo You can now run sync.vbs to sync %game_name% and %file_name%
 
 exit /b 0

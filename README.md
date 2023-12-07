@@ -7,9 +7,6 @@ Sync the startup and shutdown of any mod, app, or script with your steam games!
 
 
 ## Setup
-### Method 1 (Recommended): Command Line
-Prerequisites 
-### Method 2 (Easiest): 
-[Download the latest version] of *untitled*.exe
+Download the latest release folder
 # ModSync
 
