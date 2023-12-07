@@ -1,7 +1,7 @@
 # SteamSync
 ### Sync the startup and shutdown of any mod, app, or script with your steam games!
 ## Setup
-1. Download the latest release and extract the zip
+1. Download the [latest release](https://github.com/armand0e/SteamSync/releases/latest) (the Source Code zip) and extract the zip
 2. Run setup.bat
 
 ## Usage
