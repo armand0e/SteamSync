@@ -8,10 +8,12 @@ if "%~2"=="" (
 set "game_fullpath=%~f1"
 set "game_name=%~nx1"
 set "game_dir=%~dp1"
+set "game_title=%~n1"
 
 set "file_fullpath=%~f2"
 set "file_name=%~nx2"
 set "file_dir=%~dp2"
+set "file_title=%~n2"
 
 echo syncing %game_name% and %file_name% ...
 timeout /t 1 /nobreak >nul 2>&1
@@ -36,13 +38,12 @@ echo @echo off > "%game_dir%sync.bat"
 
 echo CreateObject("Wscript.Shell").Run "sync.bat", 0, True > "%game_dir%sync.vbs"
 
-echo rm "%game_dir%sync.bat" > uninstall\%game_name%_%file_name%.bat
-echo rm "%game_dir%sync.vbs" >> uninstall\%game_name%_%file_name%.bat
-echo rm "%%~f0" >> uninstall\%game_name%_%file_name%.bat
+echo rm "%game_dir%sync.bat" > uninstall\%game_title%_%file_title%.bat
+echo rm "%game_dir%sync.vbs" >> uninstall\%game_title%_%file_title%.bat
+echo rm "%%~f0" >> uninstall\%game_title%_%file_title%.bat
 
 iexpress /n /q /m "%game_dir%sync.bat"
 echo. 
 echo sync.bat and sync.vbs were successfully created in %game_dir%
-echo You can now run sync.vbs to sync %game_name% and %file_name%
 
 exit /b 0
