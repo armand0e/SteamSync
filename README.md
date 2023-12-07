@@ -1,12 +1,15 @@
 # SteamSync
 Sync the startup and shutdown of any mod, app, or script with your steam games!
  
-*To use in the steam launcher use the following launch options on the desired game*
+* To use with the steam launcher use the following launch options for the desired game:
 
-    sync.vbs %COMMAND%
+        sync.vbs %COMMAND%
+
 
 ## Setup
 ### Method 1 (Recommended): Command Line
-[Download the latest version] of   
+Prerequisites 
+### Method 2 (Easiest): 
+[Download the latest version] of *untitled*.exe
 # ModSync
 
