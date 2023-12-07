@@ -9,16 +9,13 @@
 1. Launch *SteamSync.py*
 2. Specify both files
 
-For steam game, browse for and select the .exe file of the steam game you would like to sync.
-
-For mod/app/script, browse for and select the program you want to launch with your game.
-
-*The file path for both files can also just be pasted into the text box*
+* In the first input box, browse for and select the .exe file of the steam game you would like to sync
+* In the second input box, browse for and select the program you want to launch with your game.
+* *You can also just paste the file path for both files into the provided text box*
 
 3. Press "Sync"        
 
-
-**To use with the steam launcher specify the following launch options for the desired game:**
+**To use with the steam launcher, specify the following launch options for your game:**
 
         sync.vbs %COMMAND%
 
