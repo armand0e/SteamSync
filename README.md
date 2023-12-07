@@ -7,7 +7,7 @@
 ## Usage
 
 1. Launch *SteamSync.py*
-2. Specify both files
+2. Specify which programs you would like to sync
 
 * In the first input box, browse for and select the .exe file of the steam game you would like to sync
 * In the second input box, browse for and select the program you want to launch with your game.
