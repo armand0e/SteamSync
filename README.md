@@ -16,7 +16,7 @@
 
 3. Press "Sync"        
 
-**To use with the steam launcher, specify the following launch options for your game:**
+**IMPORTANT: To use with the steam launcher, specify the following launch options for your game:**
 
         sync.vbs %COMMAND%
 
