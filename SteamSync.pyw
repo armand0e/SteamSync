@@ -4,11 +4,11 @@ import PySimpleGUI as sg
 
 layout = [
     [sg.Text('Steam Game'), sg.Input(key="-IN-"), sg.FileBrowse(initial_folder="C:/Program Files (x86)/Steam/steamapps/common", file_types=(("Executable", "*.exe"),))],
-    [sg.Text('Mod/App/Script'), sg.Input(key="-IN-"), sg.FileBrowse(initial_folder='C:/Users/*USERNAME*/Downloads')],
+    [sg.Text('Mod/App/Script'), sg.Input(key="-IN-"), sg.FileBrowse(initial_folder='C:/Users')],
     [sg.Button("Sync"), sg.Cancel()]
 ]
 
-window = sg.Window('SteamSync Setup GUI', layout)
+window = sg.Window('SteamSync GUI', layout)
 
 while True:
     event, values = window.read()
