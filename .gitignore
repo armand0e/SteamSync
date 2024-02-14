@@ -1,2 +1,4 @@
 
 uninstall/RocketLeague_BakkesMod.bat
+*.url
+error_log.txt
